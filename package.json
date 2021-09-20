@@ -1,5 +1,5 @@
 {
-  "repository": "#",
+  "repository": "https://github.com/ZachBach/particle-landing-page/",
   "license": "UNLICENSED",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
