@@ -3,6 +3,10 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 
+// Texture Loader
+const loader = new THREE.TextureLoader()
+const cross = loader.load('./death-star.png')
+
 // Debug
 const gui = new dat.GUI()
 
@@ -24,7 +28,7 @@ const posArray = new Float32Array(particlesCount * 3);
 for (let i = 0; i < particlesCount * 3; i++) {
     // posArray[i] = Math.random()
     // posArray[i] = Math.random() - 0.5
-    posArray[i] = (Math.random() - 0.5) * 5
+    posArray[i] = (Math.random() - 0.5) * (Math.random() * 5)
 }
 
 particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
@@ -35,10 +39,16 @@ const material = new THREE.PointsMaterial({
     size: 0.005
 })
 
+const particlesMaterial = new THREE.PointsMaterial({
+    size: 0.005,
+    map: cross,
+    transparent: true,
+})
+
 
 // Mesh
 const sphere = new THREE.Points(geometry,material)
-const particleMesh = new THREE.Points(particlesGeometry, material)
+const particleMesh = new THREE.Points(particlesGeometry, particlesMaterial)
 scene.add(sphere, particleMesh)
 
 // Lights
