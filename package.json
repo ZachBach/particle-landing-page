@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://github.com/ZachBach/particle-landing-page/",
-  "license": "UNLICENSED",
   "scripts": {
     "build": "webpack --config ./bundler/webpack.prod.js",
-    "dev": "webpack serve --config ./bundler/webpack.dev.js"
+    "dev": "webpack serve --config ./bundler/webpack.dev.js",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/core": "^7.13.1",

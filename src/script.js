@@ -36,13 +36,14 @@ particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3
 // Materials
 
 const material = new THREE.PointsMaterial({
-    size: 0.005
+    size: 0.005,
 })
 
 const particlesMaterial = new THREE.PointsMaterial({
     size: 0.005,
     map: cross,
     transparent: true,
+    color: 'blue'
 })
 
 
